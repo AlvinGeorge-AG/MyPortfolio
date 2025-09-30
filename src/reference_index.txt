@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+  <script>
+        window.addEventListener('load', function () {
+
+          // Disable scrolling by adding the no-scroll class to the body
+          document.body.classList.add('no-scroll');
+
+      setTimeout(function () {
+        const overlay = document.getElementById('loading-overlay');
+        overlay.style.opacity = '0'; // Smooth transition
+        setTimeout(() => {
+          overlay.style.display = 'none';
+          document.body.classList.remove('no-scroll'); // Enable scrolling after hiding the overlay
+        }, 1000); // Matches fade-out duration
+      }, 3000); // Total loading time
+    });
+
+  </script>
+  <script>
+        window.addEventListener('load', function () {
+        const loadingMessage = document.querySelector('.loading-message');
+
+        // Change message after 2 seconds
+        setTimeout(() => {
+          loadingMessage.textContent = 'Almost done...';
+        }, 2000);
+
+        // Hide loading overlay after 5 seconds
+        setTimeout(()=> {
+          const overlay = document.getElementById('loading-overlay');
+          overlay.style.opacity = '0';
+          setTimeout(() => {
+            overlay.style.display = 'none';
+            overlay.style.opacity = '0';
+          }, 1000); // Matches fade-out duration
+        }, 3000); // Total loading time
+      });
+  </script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedHeadings = document.querySelectorAll('.animated-heading');
+  
+      function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+  
+      function onScroll() {
+        animatedHeadings.forEach(function(animatedHeading) {
+          if (isElementInViewport(animatedHeading)) {
+            animatedHeading.classList.add('fadeIn');
+          } else {
+            animatedHeading.classList.remove('fadeIn');
+          }
+        });
+      }
+  
+      window.addEventListener('scroll', onScroll);
+      onScroll(); // Trigger the function on load
+    });
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD8VZZR78Y"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-DD8VZZR78Y');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="icon" type="image/png" href="assets/images/my.png">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
+
+  <title>Its Me Alvin</title>
+
+
+  <!-- Whatsapp  Meta Tags -->
+  <meta name="whatsapp:card" content="summary_large_image">
+  <meta property="whatsapp:domain" content="alvingeorge550.github.io">
+  <meta property="whatsapp:url" content="https://AlvinGeorge-AG.github.io/MYWEB/">
+  <meta name="whatsapp:title" content="Its Me Alvin">
+  <meta name="whatsapp:description" content="Its Me Alvin">
+  <meta name="whatsapp:image" content="https://opengraph.b-cdn.net/production/images/db033188-ca08-42b8-a739-960a7cbed9e8.jpg?token=WNSIAH-r48wjzmvLt9MVc3SmF_wWu3KdlyKmKN3s02g&height=600&width=1200&expires=33260606676">
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/templatemo-style.css" />
+  <link rel="stylesheet" href="assets/css/fontawesome.css" />
+  <link rel="stylesheet" href="assets/css/owl.css" />
+  <link rel="stylesheet" href="assets/css/lightbox.css" />
+</head>
+
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+      <div class="loader"></div>
+      <p class="loading-message">Loading, Hold On...</p>
+    </div>        
+    <div id="page-wraper">
+      <!-- Sidebar Menu -->
+      <div class="responsive-nav">
+        <i class="fa fa-bars" id="menu-toggle"></i>
+        <div id="menu" class="menu">
+          <i class="fa fa-times" id="menu-close"></i>
+          <div class="container">
+            <div class="image">
+              <a href="#"><img src="assets/images/oo.png" alt="" /></a>
+            </div>
+            <div class="author-content">
+              <h4>ALVIN GEORGE</h4>
+              <span>Tech Enthusiast</span>
+            </div>
+            <nav class="main-nav" role="navigation">
+              <ul class="main-menu">
+                <li><a href="#section1">About Me</a></li>
+                <li><a href="#section3">My Projects</a></li>
+                <li><a href="#section4">Contact Me</a></li>
+              </ul>
+            </nav>
+            <div class="social-network">
+              <ul class="soial-icons">
+                <li>
+                  <a href="https://www.facebook.com/Alvingeorge.500?mibextid=ZbWKwL"
+                  target="_blank" ><i class="fa fa-facebook"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:alvingeorge_@outlook.com" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/alvingeorge365" target="_blank"><i class="fa fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/alvin.george__" target="_blank"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                  <a href="https://github.com/AlvinGeorge-AG" target="_blank"><i class="fa fa-github"></i></a>
+                </li>
+              </ul>
+            </div>
+            <div class="copyright-text">
+              <p>  </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="section about-me" data-section="section1">
+        <div class="container">
+          <div class="section-heading">
+            <div style="max-height: 25px;"><h5><span style="color: #add8e6;;" class="auto-type"></span></h5></div>
+            <h3 style="margin-top: 50px;" class="animated-heading" >About Me</h3>
+            <div class="line-dec"></div>
+            <p class="animated-heading">Hi, I'm Alvin George, a passionate B.Tech Computer Science student at <br> Government Model Engineering College, Kochi.</p>
+          </div>
+          <div class="left-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-image">
+                  <img src="assets/images/lt.jpeg" alt="" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-text">
+                    <h4 class="animated-heading" >Code Crusader</h4>
+                  <p class="animated-heading">
+                      With a strong foundation in programming fundamentals, I'm eager to dive deeper into the world of technology. I've already gained a solid grasp of basics in Python, HTML, and CSS, and I'm excited to expand my skill set further.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right-image-post">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="left-text">
+                    <h4 class="animated-heading">My Thinking Dimension</h4>
+                  <p class="animated-heading">
+                      I'm a dedicated learner, always on the lookout for opportunities to grow and improve. I believe in the power of hard work and perseverance, and I'm ready to put in the effort required to excel in the tech industry. When I find a company that aligns with my values and utilizes my skills, I'm willing to dedicate myself to contributing to its success.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="right-image">
+                  <img src="assets/images/tag.jpg" 
+                />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="section highlights"  data-section="section-highlights">
+        <div class="container">
+          <div class="section-heading">
+            <h2 class="animated-heading" >Highlights</h2>
+            <div class="line-dec"></div>
+            <span class="animated-heading">Current Highlights</span>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="highlight-image">
+                <img src="assets/images/IMG_20241222_060059.jpg" alt="Highlight Image" class="img-fluid" />
+              </div><br>
+            </div>
+            <div class="col-md-6">
+              <div class="highlight-text">
+                <h4 class="animated-heading">A 24 hr Hackathon !</h4><br>
+                <p class="animated-heading">
+                  Throughout my journey, I have achieved several milestones that I am proud of. From mastering new programming languages to contributing to open-source projects, each step has been a learning experience. I am excited to continue this journey and achieve even more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    
+      <!-- languages and  Skills that I have gained -->
+      
+      <!-- Projects I have Made -->
+      
+
+      <section class="section contact-me" data-section="section4">
+        <div class="container">
+            <div class="section-heading">
+                <h2 class="animated-heading">Contact Me</h2>
+                <div class="line-dec"></div>
+                <p class="animated-heading">
+                  Let's connect and see how we can collaborate to drive innovation and progress in the tech world!<br> Feel free to give corrections and advice , because that  make's  me Perfect & Optimized!
+                </p>
+                <div class="social-network">
+                    <ul class="social-icons">
+                        <li>
+                            <a href="https://www.facebook.com/Alvingeorge.500?mibextid=ZbWKwL" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>
+                            <a href="mailto:alvingeorge_@outlook.com" target="_blank"><i class="fa fa-whatsapp"></i></a>
+                        </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>
+                            <a href="https://www.linkedin.com/in/alvingeorge365" target="_blank"><i class="fa fa-linkedin"></i></a>
+                        </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>
+                            <a href="https://www.instagram.com/alvin.george__" target="_blank"><i class="fa fa-instagram"></i></a>
+                        </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <li>
+                            <a href="https://github.com/AlvinGeorge-AG" target="_blank"><i class="fa fa-github"></i></a>
+                        </li>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </ul>
+                </div>
+
+            </div>
+            <div class="row">
+            <div class="right-content">
+                <div class="container">
+                    <form class="column" id="submit-form" action="">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="Alvin"  type="text" class="form-control" id="name" placeholder="Your name..." required="" />
+                                </fieldset><br>
+                            </div>
+                            <div class="col-md-6">
+                                <fieldset>
+                                    <input name="email" type="email" class="form-control"  id="email" placeholder="Your email..."  required="" />
+                                </fieldset><br>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <input name="subject" type="text"  class="form-control" id="subject" placeholder="Subject..." required="" />
+                                </fieldset><br>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <textarea name="message" rows="6"  class="form-control"  id="message" placeholder="Your message...
+                                              !!!Please Click the Send Button Only Once And Wait!!!"
+                                              required="">
+                                    </textarea>
+                                </fieldset><br>
+                            </div>
+                            <div class="col-md-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit">
+                                        Send
+                                    </button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div><br><br>
+                <div align="center">&#169; Alvin George lnc. All Rights Reserved.<br>Devoloped By Alvin George.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+     
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+      $(".main-menu li:first").addClass("active");
+
+      var showSection = function showSection(section, isAnimate) {
+        var direction = section.replace(/#/, ""),
+          reqSection = $(".section").filter(
+            '[data-section="' + direction + '"]'
+          ),
+          reqSectionPos = reqSection.offset().top - 0;
+
+        if (isAnimate) {
+          $("body, html").animate(
+            {
+              scrollTop: reqSectionPos
+            },
+            800
+          );
+        } else {
+          $("body, html").scrollTop(reqSectionPos);
+        }
+      };
+
+      var checkSection = function checkSection() {
+        $(".section").each(function() {
+          var $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+          if (topEdge < wScroll && bottomEdge > wScroll) {
+            var currentId = $this.data("section"),
+              reqLink = $("a").filter("[href*=\\#" + currentId + "]");
+            reqLink
+              .closest("li")
+              .addClass("active")
+              .siblings()
+              .removeClass("active");
+          }
+        });
+      };
+
+      $(".main-menu").on("click", "a", function(e) {
+        e.preventDefault();
+        showSection($(this).attr("href"), true);
+      });
+
+      $(window).scroll(function() {
+        checkSection();
+      });
+    </script>
+    <script>
+        $("#submit-form").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbzM-CYxR1ep8VY6V4q_-0SougF1lmO5YlgC_xwltACu85AJ33PymDX1urGtdXAHj_txPA/exec",
+                data: $("#submit-form").serialize(),
+                method: "post",
+                success: function (response) {
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                },
+                error: function (err) {
+                    alert("Something Error")
+
+                }
+            })
+        })
+    </script>
+    <!-- Typing -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed(".auto-type",{
+        strings: ["Welcome to my personal website where I share my thoughts and project's"],
+        typeSpeed: 40,
+        backSpeed: 40,
+        loop:true
+      })
+    </script>
+    
+  </body>
+</html>
