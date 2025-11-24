@@ -169,7 +169,7 @@ function App() {
                 </li>
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/alvingeorge365"
+                    href="https://www.linkedin.com/in/alvingeorge550"
                     target="_blank"
                     rel="noreferrer"
                   >
