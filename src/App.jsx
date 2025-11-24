@@ -141,9 +141,10 @@ function App() {
             </div>
             <nav className="main-nav" role="navigation">
               <ul className="main-menu">
-                <li><a href="#section1">About Me</a></li>
-                <li><a href="#section3">My Projects</a></li>
-                <li><a href="#section4">Contact Me</a></li>
+                <li><a href="#1">About Me</a></li>
+                <li><a href="#3">Tech Skills</a></li>
+                <li><a href="#2">My Projects</a></li>
+                <li><a href="#4">Contact Me</a></li>
               </ul>
             </nav>
             <div className="social-network">
@@ -203,7 +204,7 @@ function App() {
       </div>
 
       {/* About Me Section */}
-      <section className="section about-me" data-section="section1">
+      <section className="section about-me" id="1">
         <div className="container">
           <div className="section-heading">
             <div style={{ maxHeight: "25px" }}>
@@ -269,7 +270,7 @@ function App() {
       </section>
 
       {/* Highlights Section */}
-      <section className="section highlights" data-section="section-highlights">
+      <section className="section highlights" >
         <div className="container">
           <div className="section-heading">
             <h2 className="">Highlights</h2>
@@ -305,7 +306,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section className="section my-services" data-section="section2">
+      <section className="section my-services" id="3">
         <div className="container">
           <div className="section-heading">
             <h2 className="">What I’m good at?</h2>
@@ -334,7 +335,7 @@ function App() {
 
 
       {/* Projects Section */}
-      <section className="section my-work" data-section="section3">
+      <section className="section my-work" id="2">
         {/* Add your projects here */}
         <div class="section-heading">
           <h2 class="">My Projects</h2>
@@ -384,7 +385,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section className="section contact-me" data-section="section4">
+      <section className="section contact-me" id="4">
         <div className="container">
           <div className="section-heading">
             <h2 className="">Contact Me</h2>
