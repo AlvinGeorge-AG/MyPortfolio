@@ -1,6 +1,67 @@
 import { useState } from "react";
 import "./App.css";
 
+const data = [
+  {
+    heading: "QR CODE generator built on JavaScript",
+    note: "A simple QR code generator built by integrating API & JavaScript.",
+    img: "/images/qrcodejs.png",
+    demoLink: "https://alvingeorge-ag.github.io/QRcode-js-project/",
+    githubLink: "https://github.com/AlvinGeorge-AG/QRcode-js-project.git",
+    type: "JavaScript Projects"
+  },
+  {
+    heading: "A Clock Using JavaScript",
+    note: "A simple Clock created with HTML and JavaScript.",
+    img: "/images/clockjs.png",
+    demoLink: "https://alvingeorge-ag.github.io/CLOCK_js_project/",
+    githubLink: "https://github.com/AlvinGeorge-AG/CLOCK_js_project.git",
+    type: "JavaScript Projects"
+  },
+  {
+    heading: "My personal website",
+    note: "A simple webpage created with HTML | CSS | JavaScript.",
+    img: "/images/new.png",
+    demoLink: "https://AlvinGeorge-AG.github.io/MYWEB",
+    githubLink: "https://github.com/AlvinGeorge-AG/MYWEB/",
+    type: "HTML&CSSProjects"
+  },
+  {
+    heading: "Understanding Git and GitHub",
+    note: "A simple webpage created with HTML and CSS.",
+    img: "/images/Screenshot 2024-08-25 201131.png",
+    demoLink: "https://AlvinGeorge-AG.github.io/Gitproject/",
+    githubLink: "https://github.com/AlvinGeorge-AG/Gitproject.git",
+    type: "GitProjects HTML&CSSProjects"
+  },
+  {
+    heading: "An ImageSlider Using JavaScript",
+    note: "A simple ImageSlide created with HTML and JavaScript.",
+    img: "/images/imagesliderjs.png",
+    demoLink: "https://alvingeorge-ag.github.io/imageSlider_JavascriptProject/",
+    githubLink: "https://github.com/AlvinGeorge-AG/imageSlider_JavascriptProject.git",
+    type: "HTML&CSSProjects JavaScript Projects"
+  },
+  {
+    heading: "A Simple Calculator!",
+    note: "It is a simple Calculator made with JavaScript.",
+    img: "/images/calu.png",
+    demoLink: "https://AlvinGeorge-AG.github.io/CALCULATOR/",
+    githubLink: "https://github.com/AlvinGeorge-AG/CALCULATOR.git",
+    type: "GitProjects"
+  },
+  {
+    heading: "A Random Quote Generator",
+    note: "A Random Quote Generator by integrating JavaScript and API.",
+    img: "/images/randquote.png",
+    demoLink: "https://alvingeorge-ag.github.io/Random-Quote-Generator/",
+    githubLink: "https://github.com/AlvinGeorge-AG/Random-Quote-Generator.git",
+    type: "HTML&CSSProjects JavaScript Projects"
+  }
+];
+
+
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -266,212 +327,45 @@ function App() {
           <p class=""> I'm curious about the endless possibilities that AI presents and look forward to exploring this field further also I hope to complete more useful projects in future.</p>
         </div>
         <div className="isotope-box" style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap', justifyContent: 'center' }}>
-          <div className="isotope-item" data-type="JavaScript Projects">
-            <figure className="snip1321">
-              <img
-                src="/images/qrcodejs.png"
-                alt="QR Code"
-                style={{ height: "280px" }}
-              />
-              <figcaption>
-                <a
-                  href="https://alvingeorge-ag.github.io/QRcode-js-project/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>QR CODE generator built on JavaScript</h4>
-                <span>
-                  <b>
-                    A simple QR code generator built by integrating API & JavaScript.
+
+          {data.map((item, index) => (
+            <div key={index} className="isotope-item" data-type={item.type}>
+              <figure className="snip1321">
+                <img
+                  src={item.img}
+                  alt={item.heading}
+                  style={{ height: "280px" }}
+                />
+                <figcaption>
+                  <a
+                    href={item.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <i className="fa fa-search"></i>
+                  </a>
+
+                  <h4>{item.heading}</h4>
+
+                  <span>
+                    <b>
+                      {item.note}
+                      <br />
+                      Click the search button to view my project.
+                    </b>
                     <br />
-                    Click the search button to view my project.
-                  </b>
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/QRcode-js-project.git" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="isotope-item" data-type="JavaScript Projects">
-            <figure className="snip1321">
-              <img
-                src="/images/clockjs.png"
-                alt="clock"
-                style={{ height: "280px" }}
-              />
-              <figcaption>
-                <a
-                  href="https://alvingeorge-ag.github.io/CLOCK_js_project/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>A Clock Using JavaScript</h4>
-                <span>
-                  <b>
-                    A simple Clock created with HTML and JavaScript.
-                    <br />
-                    Click the search button to view my project.
-                  </b>
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/CLOCK_js_project.git" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="isotope-item" data-type="HTML&CSSProjects">
-            <figure className="snip1321">
-              <img
-                src="/images/new.png"
-                alt="MYWEB"
-                style={{ height: "280px" }}
-              />
-              <figcaption>
-                <a href="https://AlvinGeorge-AG.github.io/MYWEB" target="_blank" rel="noreferrer">
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>My personal website</h4>
-                <span>
-                  <b>
-                    A simple webpage created with HTML|CSS|JAVASCRIPT.
-                    <br />
-                    You are just currently viewing it!.
-                  </b>
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/MYWEB/" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="isotope-item" data-type="GitProjects HTML&CSSProjects">
-            <figure className="snip1321">
-              <img
-                src="/images/Screenshot 2024-08-25 201131.png"
-                alt=""
-                style={{ height: "280px" }}
-              />
-              <figcaption>
-                <a
-                  href="https://AlvinGeorge-AG.github.io/Gitproject/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>Understanding Git and GitHub</h4>
-                <span>
-                  A simple webpage created with HTML and CSS.
-                  <br />
-                  Click the search button to view my project.
-                  <br />
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/Gitproject.git" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="isotope-item" data-type="HTML&CSSProjects JavaScript Projects">
-            <figure className="snip1321">
-              <img
-                src="/images/imagesliderjs.png"
-                alt="image slider"
-                style={{ height: "280px" }}
-              />
-              <figcaption>
-                <a
-                  href="https://alvingeorge-ag.github.io/imageSlider_JavascriptProject/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>An ImageSlider Using JavaScript</h4>
-                <span>
-                  <b>
-                    A simple ImageSlide created with HTML and JavaScript.
-                    <br />
-                    Click the search button to view my project.
-                  </b>
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/imageSlider_JavascriptProject.git" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="isotope-item" data-type="GitProjects">
-            <figure className="snip1321" style={{ height: "280px" }}>
-              <img src="/images/calu.png" alt="Calculator" />
-              <figcaption>
-                <a
-                  href="https://AlvinGeorge-AG.github.io/CALCULATOR/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>A Simple Calculator!</h4>
-                <span>
-                  It is a simple Calculator made with JavaScript.
-                  <br />
-                  Click the search button to view my project.
-                  <br />
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/CALCULATOR.git" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
-
-          <div className="isotope-item" data-type="HTML&CSSProjects JavaScript Projects">
-            <figure className="snip1321">
-              <img
-                src="/images/randquote.png"
-                alt="random quote"
-                style={{ height: "280px" }}
-              />
-              <figcaption>
-                <a
-                  href="https://alvingeorge-ag.github.io/Random-Quote-Generator/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <i className="fa fa-search"></i>
-                </a>
-                <h4>A Random Quote Generator </h4>
-                <span>
-                  <b>
-                    A Random Quote Generator By integrating JS AND API.
-                    <br />
-                    Click the search button to view my project.
-                  </b>
-                  <br />
-                  <a href="https://github.com/AlvinGeorge-AG/Random-Quote-Generator.git" target="_blank" rel="noreferrer">
-                    <button>Source Code</button>
-                  </a>
-                </span>
-              </figcaption>
-            </figure>
-          </div>
+                    <a
+                      href={item.githubLink}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <button>Source Code</button>
+                    </a>
+                  </span>
+                </figcaption>
+              </figure>
+            </div>
+          ))}
         </div>
       </section>
 
