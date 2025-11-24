@@ -60,7 +60,55 @@ const data = [
   }
 ];
 
-
+const languages = [
+  {
+    name: "Java",
+    note:
+      "I started learning Java during my BTech journey, and honestly, the real power of Object-Oriented Programming hit me only after working with it. Java is strict, structured, and forces you to think like a true developer — and that’s exactly why I enjoy it."
+  },
+  {
+    name: "Flask",
+    note:
+      "Flask was my first real backend framework, and it felt surprisingly simple yet powerful. From routing to connecting MongoDB Atlas, Flask helped me understand how full-stack apps actually work. It made backend development feel approachable."
+  },
+  {
+    name: "FastAPI",
+    note:
+      "FastAPI showed me what modern Python backend development truly looks like — fast, clean, and extremely developer-friendly. I was amazed how quickly I could build APIs with automatic documentation. Definitely one of my favorite frameworks to work with."
+  }
+  ,
+  {
+    name: "Spring Boot",
+    note:
+      "Spring Boot helped me understand how large-scale backend systems are actually built. At first it felt heavy, but once I understood dependency injection, controllers, and JPA, everything clicked. It’s powerful, enterprise-level, and taught me to write clean, structured Java applications."
+  }
+  ,
+  {
+    name: "HTML & CSS",
+    note:
+      "Since childhood, I have wondered how websites are made and how they work. I was always eager to understand the mechanism of a website, which led me to study HTML & CSS. However, the problem with HTML and CSS is that if we don't revise them, we tend to forget everything."
+  },
+  {
+    name: "Python",
+    note:
+      "Even though I needed to study Python in Class X, only after completing Class XII did I realize the actual potential of Python programming language,Python is the simplest programming langauge I have ever studied."
+  },
+  {
+    name: "Git & GitHub",
+    note:
+      "It was challenging for me to understand Git, but with dedication and perseverance I learned the basics of the Git tool, Git is an unavoidable tool for developers."
+  },
+  {
+    name: "Java Script",
+    note:
+      "I am currently working on it, and I have covered the basics. Also understand the True Potential of JS ! Now Looking For NodeJS"
+  },
+  {
+    name: "C Programming",
+    note:
+      "My first impression about C was  THE MOTHER OF ALL PROGRAMMING LANGAUGES And I feel that much of effort is needed to master it.I also Practiced my DSA On C."
+  }
+];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -267,52 +315,19 @@ function App() {
           </div>
           {/* languages and  Skills that I have gained */}
           <div className="row">
-            <div className="col-md-6">
-              <div className="service-item">
-                <div className="second-service-icon service-icon"></div>
-                <h4>HTML &amp; CSS</h4>
-                <p>
-                  Since childhood, I have wondered how websites are made and how they work. I was always eager to understand the mechanism of a website, which led me to study HTML & CSS. However, the problem with HTML and CSS is that if we don't revise them, we tend to forget everything.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="service-item" style={{ height: "380px" }}>
-                <div className="third-service-icon service-icon"></div>
-                <h4>Python</h4>
-                <p>
-                  Even though I needed to study Python in Class X, only after completing Class XII did I realize the actual potential of Python programming language,Python is the simplest programming langauge I have ever studied.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="service-item">
-                <div className="fourth-service-icon service-icon"></div>
-                <h4>Git &amp; GitHub</h4>
-                <p>
-                  It was challenging for me to understand Git, but with dedication and perseverance I learned the basics of the Git tool, Git is an unavoidable tool for developers.
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="service-item" style={{ height: "330px" }}>
-                <div className="first-service-icon service-icon"></div>
-                <h4>Java Script</h4>
-                <p>
-                  I am currently working on it, and I have <br />covered the basics. Also understand the True Potential of JS !<br /><br /><br />
-                </p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="service-item" style={{ height: "360px" }}>
-                <div className="fifth-service-icon service-icon"></div>
-                <h4>C Programming</h4>
-                <p>
-                  My first impression about C was :<br /> THE MOTHER OF ALL PROGRAMMING LANGAUGES <br />And I feel that much of effort is needed to master it...<br />
-                  Anyways I am On my way..<br /><br /><br />
-                </p>
-              </div>
-            </div>
+            {languages.map((item, index) => {
+              return (
+                <div className="col-md-6">
+                  <div className="service-item">
+                    <div className="second-service-icon service-icon"></div>
+                    <h4>{item.name}</h4>
+                    <p>
+                      {item.note}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -327,7 +342,6 @@ function App() {
           <p class=""> I'm curious about the endless possibilities that AI presents and look forward to exploring this field further also I hope to complete more useful projects in future.</p>
         </div>
         <div className="isotope-box" style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap', justifyContent: 'center' }}>
-
           {data.map((item, index) => (
             <div key={index} className="isotope-item" data-type={item.type}>
               <figure className="snip1321">
