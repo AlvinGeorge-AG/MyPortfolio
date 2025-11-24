@@ -132,7 +132,7 @@ function App() {
           <div className="container">
             <div className="image">
               <a href="#">
-                <img src="/images/oo.png" alt="" />
+                <img src="/images/my.jpg" alt="" />
               </a>
             </div>
             <div className="author-content">
