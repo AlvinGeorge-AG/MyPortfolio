@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import GeometricLoader from './components/loading';
+import Typewriter from './components/typewriter'
 import "./App.css";
 
-// Your Project Data
+
 const data = [
   {
     heading: "QR CODE Generator",
@@ -77,8 +78,6 @@ function App() {
         setTimeout(() => {
           setloading(false);
         }, 3000);
-
-        // setloading(true);
       } catch (error) {
         console.error(error);
         setloading(false);
@@ -96,7 +95,7 @@ function App() {
       {/* --- MOBILE NAV BAR --- */}
       <div className="fixed top-0 left-0 w-full bg-zinc-900 text-black shadow-md z-40 p-4 md:hidden flex justify-between items-center border-b border-zinc-700">
         <span className="font-bold text-lg text-white tracking-wider">ALVIN GEORGE</span>
-        <button onClick={() => setMenuOpen(true)} className="p-2 text-black">
+        <button onClick={() => setMenuOpen(true)} className="p-2 text-red">
           <i className="fa fa-bars text-2xl"></i>
         </button>
       </div>
@@ -151,11 +150,17 @@ function App() {
       {/* --- MAIN CONTENT --- */}
       <main className="md:ml-72 transition-all duration-300">
 
-        {/* SECTION 1: ABOUT ME */}
+        {/* SECTION 1: ABOUT ME (With Typewriter) */}
         <section id="1" className="py-24 px-6 md:px-12 max-w-6xl mx-auto border-b border-zinc-700">
           <div className="mb-12">
             <h3 className="text-4xl font-bold uppercase text-white mb-2">About Me</h3>
-            <div className="h-1 w-20 bg-blue-500"></div>
+            <div className="h-1 w-20 bg-blue-500 mb-6"></div>
+
+            {/* TYPEWRITER INSERTED HERE */}
+            {!loading &&
+              <Typewriter />
+            }
+
           </div>
 
           <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
@@ -231,7 +236,6 @@ function App() {
                 </div>
                 {/* Font Size: Smaller on mobile */}
                 <h4 className="text-sm md:text-lg font-bold text-white">{item.name}</h4>
-                {/* Note Removed */}
               </div>
             ))}
           </div>
