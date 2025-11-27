@@ -67,6 +67,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languages, setlanguages] = useState([]);
   const [loading, setloading] = useState(true);
+  const [activeProject, setActiveProject] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -240,50 +241,81 @@ function App() {
         <section id="2" className="py-24 bg-black px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16 text-center">
-              <h2 className="text-4xl font-bold uppercase text-white">My Projects</h2>
-              <div className="h-1 w-24 bg-blue-500 mx-auto mt-4 mb-6"></div>
-              <p className="text-gray-400 max-w-2xl mx-auto font-medium">
-                Hover over the cards to see project details.
+              <h2 className="text-4xl font-bold uppercase text-white tracking-widest">My Projects</h2>
+              <div className="h-1 w-24 bg-blue-600 mx-auto mt-4 mb-6 shadow-[0_0_15px_rgba(37,99,235,0.8)]"></div>
+              <p className="text-gray-400 font-mono text-sm tracking-wider">
+                [ CLICK CARDS TO DECRYPT DATA ]
               </p>
             </div>
 
-            {/* CHANGED: Used GRID instead of Flex to increase width automatically */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {data.map((item, index) => (
-                // CHANGED: Removed fixed width w-[350px], added w-full. Increased height to h-80.
-                <div key={index} className="relative group w-full h-80 bg-zinc-900 rounded-xl overflow-hidden shadow-2xl cursor-pointer border border-zinc-800">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {data.map((item, index) => {
+                const isActive = activeProject === index;
 
-                  {/* IMAGE - Added blur effect on hover */}
-                  <img
-                    src={item.img}
-                    alt={item.heading}
-                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
-                  />
+                return (
+                  <div
+                    key={index}
+                    onClick={() => setActiveProject(isActive ? null : index)} // Toggle click
+                    className={`relative w-full aspect-video bg-zinc-900 rounded-lg overflow-hidden cursor-pointer border-2 transition-all duration-300 ease-out group
+                      ${isActive ? "border-blue-500 shadow-[0_0_20px_rgba(37,99,235,0.4)] scale-[1.02] z-10" : "border-zinc-800 hover:border-zinc-600"}
+                    `}
+                  >
+                    {/* 1. COMPLETE PICTURE (Aspect Video ensures full screenshot visibility) */}
+                    <img
+                      src={item.img}
+                      alt={item.heading}
+                      className={`w-full h-full object-cover transition-all duration-500 
+                        ${isActive ? "scale-110 blur-sm opacity-40" : "opacity-100"}
+                      `}
+                    />
 
-                  {/* HOVER OVERLAY - Darker background, better transition */}
-                  <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    {/* DEFAULT STATE: Title Badge (Always visible if not active) */}
+                    <div className={`absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
+                      <h4 className="text-lg font-bold text-white uppercase tracking-wider drop-shadow-md">
+                        {item.heading} <span className="text-blue-500 text-xs align-top animate-pulse">●</span>
+                      </h4>
+                    </div>
 
-                    {/* Icons and Text with Slide Up Effect */}
-                    <a href={item.demoLink} target="_blank" rel="noreferrer" className="mb-4 text-white hover:text-blue-400 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                      <i className="fa fa-search text-4xl"></i>
-                    </a>
+                    {/* 2. ACTIVE STATE: The "Control Panel" (Slides up on click) */}
+                    <div className={`absolute inset-0 flex flex-col items-center justify-center p-6 text-center bg-black/80 backdrop-blur-sm transition-all duration-300 ease-[cubic-bezier(0.25,1,0.5,1)]
+                      ${isActive ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"}
+                    `}>
 
-                    <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-75">
-                      {item.heading}
-                    </h4>
+                      {/* Decoration Lines */}
+                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-50"></div>
 
-                    <p className="text-gray-300 text-sm mb-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                      {item.note}
-                    </p>
+                      <h4 className="text-xl font-bold text-white uppercase tracking-widest mb-3 text-shadow-glow">
+                        {item.heading}
+                      </h4>
 
-                    <a href={item.githubLink} target="_blank" rel="noreferrer" className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-150">
-                      <button className="border-2 border-blue-500 text-white bg-blue-600/20 px-6 py-2 text-sm font-bold uppercase rounded hover:bg-blue-600 hover:text-white transition-colors shadow-[0_0_10px_rgba(37,99,235,0.5)]">
-                        Source Code
-                      </button>
-                    </a>
+                      <p className="text-gray-300 text-sm mb-6 font-medium leading-relaxed max-w-[90%]">
+                        {item.note}
+                      </p>
+
+                      <div className="flex gap-4">
+                        {/* Live Demo Button */}
+                        <a href={item.demoLink} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+                          <button className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-red px-5 py-2 text-xs font-bold uppercase rounded tracking-wider transition-all shadow-lg hover:shadow-blue-500/50">
+                            <i className="fa fa-eye"></i> Live Demo
+                          </button>
+                        </a>
+
+                        {/* Github Button */}
+                        <a href={item.githubLink} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+                          <button className="flex items-center gap-2 border border-zinc-500 hover:border-white text-gray-300 hover:text-white px-5 py-2 text-xs font-bold uppercase rounded tracking-wider transition-all hover:bg-white/10">
+                            <i className="fa fa-github"></i> Code
+                          </button>
+                        </a>
+                      </div>
+
+                      {/* Close Hint */}
+                      <span className="absolute bottom-3 text-[10px] text-gray-500 uppercase tracking-widest">
+                        Click to Close
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
