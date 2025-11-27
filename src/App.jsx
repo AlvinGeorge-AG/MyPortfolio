@@ -72,16 +72,13 @@ function App() {
     const fun = async () => {
       try {
         const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
-        setlangauges(response.data);
-        console.log("languages length:", languages.length);
-        console.log("RESPOSE :" + response.data);
+        setlangauges(await response.data);
       } catch (error) {
         console.log(error);
       }
     }
-
     fun();
-  }, [])
+  }, [languages])
 
   return (
     <div id="page-wraper">
