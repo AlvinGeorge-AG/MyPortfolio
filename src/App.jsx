@@ -73,7 +73,10 @@ function App() {
       try {
         const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
         setlanguages(response.data);
-        setloading(false);
+        setTimeout(() => {
+          setloading(false);
+        }, 3000);
+
         // setloading(true);
       } catch (error) {
         console.error(error);
