@@ -64,49 +64,58 @@ const languages = [
   {
     name: "Java",
     note:
-      "I started learning Java during my BTech journey, and honestly, the real power of Object-Oriented Programming hit me only after working with it. Java is strict, structured, and forces you to think like a true developer — and that’s exactly why I enjoy it."
+      "I started learning Java during my BTech journey, and honestly, the real power of Object-Oriented Programming hit me only after working with it. Java is strict, structured, and forces you to think like a true developer — and that’s exactly why I enjoy it.",
+    image: "java"
   },
   {
     name: "Flask",
     note:
-      "Flask was my first real backend framework, and it felt surprisingly simple yet powerful. From routing to connecting MongoDB Atlas, Flask helped me understand how full-stack apps actually work. It made backend development feel approachable."
+      "Flask was my first real backend framework, and it felt surprisingly simple yet powerful. From routing to connecting MongoDB Atlas, Flask helped me understand how full-stack apps actually work. It made backend development feel approachable.",
+    image: "flask"
   },
   {
     name: "FastAPI",
     note:
-      "FastAPI showed me what modern Python backend development truly looks like — fast, clean, and extremely developer-friendly. I was amazed how quickly I could build APIs with automatic documentation. Definitely one of my favorite frameworks to work with."
+      "FastAPI showed me what modern Python backend development truly looks like — fast, clean, and extremely developer-friendly. I was amazed how quickly I could build APIs with automatic documentation. Definitely one of my favorite frameworks to work with.",
+    image: "fastapi"
   }
   ,
   {
     name: "Spring Boot",
     note:
-      "Spring Boot helped me understand how large-scale backend systems are actually built. At first it felt heavy, but once I understood dependency injection, controllers, and JPA, everything clicked. It’s powerful, enterprise-level, and taught me to write clean, structured Java applications."
+      "Spring Boot helped me understand how large-scale backend systems are actually built. At first it felt heavy, but once I understood dependency injection, controllers, and JPA, everything clicked. It’s powerful, enterprise-level, and taught me to write clean, structured Java applications.",
+    image: "springboot"
   }
   ,
   {
     name: "HTML & CSS",
     note:
-      "Since childhood, I have wondered how websites are made and how they work. I was always eager to understand the mechanism of a website, which led me to study HTML & CSS. However, the problem with HTML and CSS is that if we don't revise them, we tend to forget everything."
+      "Since childhood, I have wondered how websites are made and how they work. I was always eager to understand the mechanism of a website, which led me to study HTML & CSS. However, the problem with HTML and CSS is that if we don't revise them, we tend to forget everything.",
+    image: "html"
   },
   {
     name: "Python",
     note:
-      "Even though I needed to study Python in Class X, only after completing Class XII did I realize the actual potential of Python programming language,Python is the simplest programming langauge I have ever studied."
+      "Even though I needed to study Python in Class X, only after completing Class XII did I realize the actual potential of Python programming language,Python is the simplest programming langauge I have ever studied.I also Experience With FastAPI and Flask!!",
+    image: "python"
   },
   {
     name: "Git & GitHub",
     note:
-      "It was challenging for me to understand Git, but with dedication and perseverance I learned the basics of the Git tool, Git is an unavoidable tool for developers."
+      "It was challenging for me to understand Git, but with dedication and perseverance I learned the basics of the Git tool, Git is an unavoidable tool for developers.",
+    image: "git"
   },
   {
     name: "Java Script",
     note:
-      "I am currently working on it, and I have covered the basics. Also understand the True Potential of JS ! Now Looking For NodeJS"
+      "I am currently working on it, and I have covered the basics. Also understand the True Potential of JS ! Now Looking For NodeJS",
+    image: "javascript"
   },
   {
     name: "C Programming",
     note:
-      "My first impression about C was  THE MOTHER OF ALL PROGRAMMING LANGAUGES And I feel that much of effort is needed to master it.I also Practiced my DSA On C."
+      "My first impression about C was  THE MOTHER OF ALL PROGRAMMING LANGAUGES And I feel that much of effort is needed to master it.I also Practiced my DSA On C.",
+    image: "c"
   }
 ];
 
@@ -320,11 +329,24 @@ function App() {
               return (
                 <div className="col-md-6">
                   <div className="service-item">
-                    <div className="second-service-icon service-icon"></div>
+                    <div className="service-icon" style={{ marginBottom: 12 }}>
+                      <img
+                        src={
+                          `/images/${item.image
+                            .toLowerCase()
+                            .replace(/[^a-z0-9]/g, "")}.png` // fallback: /images/{name}.png
+                        }
+                        alt={`${item.name} logo`}
+                        style={{
+                          width: 48,
+                          height: 48,
+                          objectFit: "contain",
+                          display: "block"
+                        }}
+                      />
+                    </div>
                     <h4>{item.name}</h4>
-                    <p>
-                      {item.note}
-                    </p>
+                    <p>{item.note}</p>
                   </div>
                 </div>
               );
