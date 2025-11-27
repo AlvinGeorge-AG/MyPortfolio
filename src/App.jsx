@@ -129,7 +129,7 @@ function App() {
   useEffect(() => {
     const fun = async () => {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/languages");
+        const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
         setlangauges(response.data);
         console.log("RESPOSE :" + response.data);
       } catch (error) {
