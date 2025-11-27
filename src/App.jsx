@@ -342,7 +342,7 @@ function App() {
                   Need a Developer?
                 </h2>
                 <p className="text-gray-400 font-mono text-sm tracking-wide">
-                  <span className="text-blue-500">{">"}</span> EXECUTE_DOWNLOAD: <span className="text-white">ALVIN_RESUME_V1.0.PDF</span>
+                  <span className="text-blue-500">{">"}</span> EXECUTE_DOWNLOAD: <span className="text-white">ALVIN_RESUME.PDF</span>
                 </p>
               </div>
 
