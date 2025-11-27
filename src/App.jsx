@@ -74,6 +74,7 @@ function App() {
         const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
         setlanguages(response.data);
         setloading(false);
+        // setloading(true);
       } catch (error) {
         console.error(error);
         setloading(false);
