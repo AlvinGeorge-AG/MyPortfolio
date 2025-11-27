@@ -342,14 +342,18 @@ function App() {
                   Need a Developer?
                 </h2>
                 <p className="text-gray-400 font-mono text-sm tracking-wide">
-                  <span className="text-blue-500">{">"}</span> EXECUTE_DOWNLOAD: <span className="text-white">ALVIN_RESUME.PDF</span>
+                  <span className="text-blue-500">{">"}</span> EXECUTE_DOWNLOAD: <span className="text-white">ALVIN_RESUME_V1.0.PDF</span>
                 </p>
               </div>
 
-              {/* Download Button */}
+              {/* Download Button with Alert */}
               <div className="z-10">
-                <a href="/resume.pdf" download="Alvin_George_Resume.pdf">
-                  <button className="group/btn relative overflow-hidden bg-white text-black font-bold py-4 px-10 rounded uppercase tracking-widest transition-all hover:bg-blue-500 hover:text-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]">
+                <a
+                  href="/resume.pdf"
+                  download="Alvin_George_Resume.pdf"
+                  onClick={() => alert("SYSTEM MESSAGE: Access Granted. Downloading Resume...")}
+                >
+                  <button className="group/btn relative overflow-hidden bg-white text-black font-bold py-4 px-10 rounded uppercase tracking-widest transition-all hover:bg-blue-500 hover:text-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)] cursor-pointer">
                     <span className="relative z-10 flex items-center gap-3">
                       <i className="fa fa-download text-lg group-hover/btn:animate-bounce"></i>
                       Download CV
