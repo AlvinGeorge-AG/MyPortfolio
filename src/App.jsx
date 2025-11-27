@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios"
+
 import "./App.css";
 
 const data = [
@@ -121,6 +124,22 @@ const languages = [
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [languages, setlangauges] = useState([]);
+
+  useEffect(() => {
+    const fun = async () => {
+      try {
+        const response = await axios.get("http://127.0.0.1:8000/languages");
+        setlangauges(response.data);
+        console.log("RESPOSE :" + response.data);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    fun();
+    console.log(languages);
+  }, [])
 
   return (
     <div id="page-wraper">
@@ -327,7 +346,7 @@ function App() {
           <div className="row">
             {languages.map((item, index) => {
               return (
-                <div className="col-md-6">
+                <div key={index} className="col-md-6">
                   <div className="service-item">
                     <div className="service-icon" style={{ marginBottom: 12 }}>
                       <img
@@ -359,10 +378,10 @@ function App() {
       {/* Projects Section */}
       <section className="section my-work" id="2">
         {/* Add your projects here */}
-        <div class="section-heading">
-          <h2 class="">My Projects</h2>
-          <div class="line-dec"></div>
-          <p class=""> I'm curious about the endless possibilities that AI presents and look forward to exploring this field further also I hope to complete more useful projects in future.</p>
+        <div className="section-heading">
+          <h2 className="">My Projects</h2>
+          <div className="line-dec"></div>
+          <p className=""> I'm curious about the endless possibilities that AI presents and look forward to exploring this field further also I hope to complete more useful projects in future.</p>
         </div>
         <div className="isotope-box" style={{ display: "flex", flexDirection: "row", flexWrap: 'wrap', justifyContent: 'center' }}>
           {data.map((item, index) => (
