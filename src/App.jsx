@@ -94,7 +94,7 @@ function App() {
 
       {/* --- MOBILE NAV BAR --- */}
       <div className="fixed top-0 left-0 w-full bg-zinc-900 text-black shadow-md z-40 p-4 md:hidden flex justify-between items-center border-b border-zinc-700">
-        <span className="font-bold text-lg text-white tracking-wider">ALVIN GEORGE</span>
+        <span onClick={() => setMenuOpen(true)} className="font-bold text-lg text-white tracking-wider">ALVIN GEORGE</span>
         <button onClick={() => setMenuOpen(true)} className="p-2 text-red">
           <i className="fa fa-bars text-2xl"></i>
         </button>
@@ -320,6 +320,44 @@ function App() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </section>
+
+        {/* RESUME CTA SECTION */}
+        <section className="py-12 px-6 md:px-12">
+          <div className="max-w-6xl mx-auto relative group">
+
+            {/* Background Gradient & Border */}
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/5 rounded-xl blur-xl transition-all duration-500 group-hover:blur-2xl opacity-70"></div>
+
+            <div className="relative bg-zinc-900 border border-zinc-700 p-8 md:p-12 rounded-xl flex flex-col md:flex-row items-center justify-between gap-8 overflow-hidden">
+
+              {/* Decorative Scanline */}
+              <div className="absolute top-0 left-0 w-1 h-full bg-blue-500/50 shadow-[0_0_15px_rgba(59,130,246,0.8)]"></div>
+
+              {/* Text Content */}
+              <div className="text-center md:text-left z-10">
+                <h2 className="text-3xl font-bold text-white uppercase tracking-widest mb-2 text-shadow-glow">
+                  Need a Developer?
+                </h2>
+                <p className="text-gray-400 font-mono text-sm tracking-wide">
+                  <span className="text-blue-500">{">"}</span> EXECUTE_DOWNLOAD: <span className="text-white">ALVIN_RESUME.PDF</span>
+                </p>
+              </div>
+
+              {/* Download Button */}
+              <div className="z-10">
+                <a href="/resume.pdf" download="Alvin_George_Resume.pdf">
+                  <button className="group/btn relative overflow-hidden bg-white text-black font-bold py-4 px-10 rounded uppercase tracking-widest transition-all hover:bg-blue-500 hover:text-white shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.6)]">
+                    <span className="relative z-10 flex items-center gap-3">
+                      <i className="fa fa-download text-lg group-hover/btn:animate-bounce"></i>
+                      Download CV
+                    </span>
+                  </button>
+                </a>
+              </div>
+
             </div>
           </div>
         </section>
