@@ -210,18 +210,24 @@ function App() {
             <div className="h-1 w-16 bg-blue-500 mx-auto mt-4 mb-4"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* GRID: grid-cols-2 for mobile, lg:grid-cols-4 for desktop */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {languages.map((item, index) => (
-              <div key={index} className="bg-zinc-800 p-8 rounded-xl shadow-lg hover:bg-zinc-700 hover:-translate-y-2 transition-all duration-300 border border-zinc-700 flex flex-col items-center text-center group">
-                <div className="w-16 h-16 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div
+                key={index}
+                className="bg-zinc-800 p-4 md:p-6 rounded-xl shadow-lg hover:bg-zinc-700 hover:-translate-y-2 transition-all duration-300 border border-zinc-700 flex flex-col items-center text-center group"
+              >
+                {/* Image Size: Smaller on mobile (12) */}
+                <div className="w-12 h-12 md:w-16 md:h-16 mb-4 group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={`/images/${item.image.toLowerCase().replace(/[^a-z0-9]/g, "")}.png`}
                     alt={item.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h4 className="text-xl font-bold text-white mb-2">{item.name}</h4>
-                <p className="text-sm text-gray-400 font-medium">{item.note}</p>
+                {/* Font Size: Smaller on mobile */}
+                <h4 className="text-sm md:text-lg font-bold text-white">{item.name}</h4>
+                {/* Note Removed */}
               </div>
             ))}
           </div>
