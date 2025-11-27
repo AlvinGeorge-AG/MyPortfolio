@@ -78,7 +78,7 @@ function App() {
       }
     }
     fun();
-  }, [languages])
+  }, [])
 
   return (
     <div id="page-wraper">
