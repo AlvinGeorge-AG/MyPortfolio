@@ -89,7 +89,7 @@ function App() {
       {loading && <GeometricLoader />}
 
       {/* --- MOBILE NAV BAR --- */}
-      <div className="fixed top-0 left-0 w-full bg-zinc-900 shadow-md z-40 p-4 md:hidden flex justify-between items-center border-b border-zinc-700">
+      <div className="fixed top-0 left-0 w-full bg-zinc-900 text-black shadow-md z-40 p-4 md:hidden flex justify-between items-center border-b border-zinc-700">
         <span className="font-bold text-lg text-white tracking-wider">ALVIN GEORGE</span>
         <button onClick={() => setMenuOpen(true)} className="p-2 text-black">
           <i className="fa fa-bars text-2xl"></i>
@@ -109,7 +109,7 @@ function App() {
           </button>
 
           <div className="flex flex-col items-center pt-12 pb-8 px-6 text-center border-b border-zinc-800">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-700 mb-4 shadow-xl">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-700 mb-4 shadow-xl transition-transform hover:scale-105 duration-300">
               <img src="/images/my.jpg" alt="Profile" className="w-full h-full object-cover" />
             </div>
             <h4 className="text-xl font-bold tracking-wider text-white">ALVIN GEORGE</h4>
@@ -136,9 +136,9 @@ function App() {
           </nav>
 
           <div className="p-6 border-t border-zinc-800 flex justify-center gap-5">
-            <i className="fa fa-github text-xl text-gray-500 hover:text-white cursor-pointer transition-colors"></i>
-            <i className="fa fa-linkedin text-xl text-gray-500 hover:text-blue-400 cursor-pointer transition-colors"></i>
-            <i className="fa fa-instagram text-xl text-gray-500 hover:text-pink-500 cursor-pointer transition-colors"></i>
+            <i className="fa fa-github text-xl text-gray-500 hover:text-white cursor-pointer transition-colors hover:scale-110"></i>
+            <i className="fa fa-linkedin text-xl text-gray-500 hover:text-blue-400 cursor-pointer transition-colors hover:scale-110"></i>
+            <i className="fa fa-instagram text-xl text-gray-500 hover:text-pink-500 cursor-pointer transition-colors hover:scale-110"></i>
           </div>
         </div>
       </aside>
@@ -149,18 +149,17 @@ function App() {
         {/* SECTION 1: ABOUT ME */}
         <section id="1" className="py-24 px-6 md:px-12 max-w-6xl mx-auto border-b border-zinc-700">
           <div className="mb-12">
-            {/* CHANGED text-gray-800 to text-white */}
             <h3 className="text-4xl font-bold uppercase text-white mb-2">About Me</h3>
             <div className="h-1 w-20 bg-blue-500"></div>
           </div>
 
           <div className="flex flex-col md:flex-row gap-12 items-center mb-16">
-            <div className="w-full md:w-5/12">
-              <img src="/images/lt.jpeg" alt="Laptop" className="w-full rounded-lg shadow-2xl opacity-90" />
+            <div className="w-full md:w-5/12 overflow-hidden rounded-lg shadow-2xl">
+              {/* Added hover Effect to Image */}
+              <img src="/images/lt.jpeg" alt="Laptop" className="w-full opacity-90 hover:opacity-100 hover:scale-105 transition-transform duration-700" />
             </div>
             <div className="w-full md:w-7/12">
               <h4 className="text-2xl font-bold mb-4 text-blue-400">Code Crusader</h4>
-              {/* FIXED: Removed invalid text-black-700, Changed to text-gray-300 */}
               <p className="text-gray-300 leading-relaxed text-lg">
                 Hi, I'm <span className="font-bold text-white">Alvin George</span>. With a strong foundation in programming fundamentals, I'm eager to dive deeper into technology. I've gained a solid grasp of Python, HTML, and CSS, and I'm excited to expand my skill set further.
               </p>
@@ -174,22 +173,24 @@ function App() {
                 I'm a dedicated learner, always on the lookout for opportunities to grow and improve. I believe in the power of hard work and perseverance.
               </p>
             </div>
-            <div className="w-full md:w-5/12 order-1 md:order-2">
-              <img src="/images/tag.jpg" alt="Tag" className="w-full rounded-lg shadow-2xl opacity-90" />
+            <div className="w-full md:w-5/12 order-1 md:order-2 overflow-hidden rounded-lg shadow-2xl">
+              {/* Added hover Effect to Image */}
+              <img src="/images/tag.jpg" alt="Tag" className="w-full opacity-90 hover:opacity-100 hover:scale-105 transition-transform duration-700" />
             </div>
           </div>
         </section>
 
-        {/* HIGHLIGHTS SECTION (Dark Mode) */}
+        {/* HIGHLIGHTS SECTION */}
         <section className="bg-zinc-800 py-24 px-6 md:px-12">
           <div className="max-w-6xl mx-auto">
             <div className="mb-10 text-center md:text-left">
               <h2 className="text-3xl font-bold uppercase text-white">Highlights</h2>
               <p className="text-gray-400 mt-2">Current milestones & Achievements</p>
             </div>
-            <div className="flex flex-col md:flex-row gap-10 items-center bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700">
-              <div className="w-full md:w-1/2">
-                <img src="/images/IMG_20241222_060059.jpg" alt="Hackathon" className="w-full rounded-xl shadow-md" />
+            <div className="flex flex-col md:flex-row gap-10 items-center bg-zinc-900 p-8 rounded-2xl shadow-lg border border-zinc-700 hover:border-blue-500/30 transition-colors duration-300">
+              <div className="w-full md:w-1/2 overflow-hidden rounded-xl">
+                {/* Added hover Effect to Image */}
+                <img src="/images/IMG_20241222_060059.jpg" alt="Hackathon" className="w-full shadow-md hover:scale-105 transition-transform duration-500" />
               </div>
               <div className="w-full md:w-1/2">
                 <h4 className="text-2xl font-bold mb-4 text-white">A 24 hr Hackathon!</h4>
@@ -201,7 +202,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 3: TECH SKILLS (Dark Mode) */}
+        {/* SECTION 3: TECH SKILLS */}
         <section id="3" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
           <div className="mb-16 text-center">
             <h2 className="text-3xl font-bold uppercase text-white">My Skills</h2>
@@ -210,16 +211,14 @@ function App() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {languages.map((item, index) => (
-              // CHANGED: bg-white to bg-zinc-800, text-black to text-white
-              <div key={index} className="bg-zinc-800 p-8 rounded-xl shadow-lg hover:bg-zinc-700 transition-all duration-300 border border-zinc-700 flex flex-col items-center text-center group">
-                <div className="w-16 h-16 mb-6">
+              <div key={index} className="bg-zinc-800 p-8 rounded-xl shadow-lg hover:bg-zinc-700 hover:-translate-y-2 transition-all duration-300 border border-zinc-700 flex flex-col items-center text-center group">
+                <div className="w-16 h-16 mb-6 group-hover:scale-110 transition-transform duration-300">
                   <img
                     src={`/images/${item.image.toLowerCase().replace(/[^a-z0-9]/g, "")}.png`}
                     alt={item.name}
                     className="w-full h-full object-contain"
                   />
                 </div>
-                {/* FIXED: Text colors for dark mode */}
                 <h4 className="text-xl font-bold text-white mb-2">{item.name}</h4>
                 <p className="text-sm text-gray-400 font-medium">{item.note}</p>
               </div>
@@ -227,48 +226,48 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 2: PROJECTS (Dark Mode + Fixed Text) */}
+        {/* SECTION 2: PROJECTS (Updated) */}
         <section id="2" className="py-24 bg-black px-6 md:px-12">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16 text-center">
               <h2 className="text-4xl font-bold uppercase text-white">My Projects</h2>
               <div className="h-1 w-24 bg-blue-500 mx-auto mt-4 mb-6"></div>
-              {/* FIXED: Changed text color to gray-400 */}
               <p className="text-gray-400 max-w-2xl mx-auto font-medium">
                 Hover over the cards to see project details.
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8">
+            {/* CHANGED: Used GRID instead of Flex to increase width automatically */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {data.map((item, index) => (
-                <div key={index} className="relative group w-full sm:w-[350px] h-[280px] bg-zinc-900 rounded-xl overflow-hidden shadow-2xl cursor-pointer border border-zinc-800">
+                // CHANGED: Removed fixed width w-[350px], added w-full. Increased height to h-80.
+                <div key={index} className="relative group w-full h-80 bg-zinc-900 rounded-xl overflow-hidden shadow-2xl cursor-pointer border border-zinc-800">
 
-                  {/* IMAGE */}
+                  {/* IMAGE - Added blur effect on hover */}
                   <img
                     src={item.img}
                     alt={item.heading}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 group-hover:opacity-40"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:blur-sm"
                   />
 
-                  {/* HOVER OVERLAY */}
-                  <div className="absolute inset-0 bg-black/90 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  {/* HOVER OVERLAY - Darker background, better transition */}
+                  <div className="absolute inset-0 bg-black/80 flex flex-col items-center justify-center p-6 text-center opacity-0 group-hover:opacity-100 transition-all duration-300">
 
-                    {/* Icons and Text */}
-                    <a href={item.demoLink} target="_blank" rel="noreferrer" className="mb-3 text-white hover:text-blue-400 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <i className="fa fa-search text-3xl"></i>
+                    {/* Icons and Text with Slide Up Effect */}
+                    <a href={item.demoLink} target="_blank" rel="noreferrer" className="mb-4 text-white hover:text-blue-400 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                      <i className="fa fa-search text-4xl"></i>
                     </a>
 
-                    <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                    <h4 className="text-xl font-bold text-white uppercase tracking-wider mb-2 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-75">
                       {item.heading}
                     </h4>
 
-                    {/* FIXED: Force white text on hover */}
-                    <p className="text-gray-300 text-sm mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+                    <p className="text-gray-300 text-sm mb-6 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-100">
                       {item.note}
                     </p>
 
-                    <a href={item.githubLink} target="_blank" rel="noreferrer" className="translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-150">
-                      <button className="border-2 border-white text-white px-5 py-2 text-sm font-bold uppercase rounded hover:bg-white hover:text-black transition-colors">
+                    <a href={item.githubLink} target="_blank" rel="noreferrer" className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 delay-150">
+                      <button className="border-2 border-blue-500 text-white bg-blue-600/20 px-6 py-2 text-sm font-bold uppercase rounded hover:bg-blue-600 hover:text-white transition-colors shadow-[0_0_10px_rgba(37,99,235,0.5)]">
                         Source Code
                       </button>
                     </a>
@@ -279,7 +278,7 @@ function App() {
           </div>
         </section>
 
-        {/* SECTION 4: CONTACT (Dark Mode) */}
+        {/* SECTION 4: CONTACT (Updated) */}
         <section id="4" className="py-24 px-6 md:px-12 max-w-4xl mx-auto">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold uppercase text-white">Contact Me</h2>
@@ -287,14 +286,17 @@ function App() {
           </div>
 
           <div className="bg-zinc-800 p-10 shadow-2xl rounded-2xl border border-zinc-700">
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 text-white placeholder-gray-500" placeholder="Your Name" />
-                <input type="email" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 text-white placeholder-gray-500" placeholder="Your Email" />
+            {/* CHANGED: Increased space-y from 6 to 8 */}
+            <form className="space-y-8">
+              {/* CHANGED: Increased gap from 6 to 8 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <input type="text" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Your Name" />
+                <input type="email" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Your Email" />
               </div>
-              <input type="text" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 text-white placeholder-gray-500" placeholder="Subject" />
-              <textarea rows="5" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 text-white placeholder-gray-500" placeholder="Message"></textarea>
-              <button className="w-full bg-blue-600 text-black py-4 font-bold uppercase rounded hover:bg-blue-700 transition-all shadow-lg">
+              <input type="text" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Subject" />
+              <p></p>
+              <textarea rows="5" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Message"></textarea>
+              <button className="w-full bg-blue-600 text-black py-4 font-bold uppercase rounded hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/50">
                 Send Message
               </button>
             </form>
