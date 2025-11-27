@@ -122,8 +122,8 @@ function App() {
 
           <nav className="flex-1 py-8">
             <ul className="flex flex-col space-y-2">
-              {["About Me", "Tech Skills", "My Projects", "Contact Me"].map((text, idx) => {
-                const ids = ["#1", "#3", "#2", "#4"];
+              {["About Me", "Tech Skills", "My Projects", "Resume", "Contact Me"].map((text, idx) => {
+                const ids = ["#1", "#3", "#2", "#4", "#5"];
                 return (
                   <li key={idx}>
                     <a
@@ -325,7 +325,7 @@ function App() {
         </section>
 
         {/* RESUME CTA SECTION */}
-        <section className="py-12 px-6 md:px-12">
+        <section id="4" className="py-12 px-6 md:px-12">
           <div className="max-w-6xl mx-auto relative group">
 
             {/* Background Gradient & Border */}
@@ -363,7 +363,7 @@ function App() {
         </section>
 
         {/* SECTION 4: CONTACT (Updated) */}
-        <section id="4" className="py-24 px-6 md:px-12 max-w-4xl mx-auto">
+        <section id="5" className="py-24 px-6 md:px-12 max-w-4xl mx-auto">
           <div className="mb-12 text-center">
             <h2 className="text-3xl font-bold uppercase text-white">Contact Me</h2>
             <div className="h-1 w-16 bg-blue-500 mx-auto mt-4 mb-6"></div>
