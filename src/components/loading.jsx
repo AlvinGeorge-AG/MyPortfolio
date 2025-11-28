@@ -42,10 +42,8 @@ const GeometricLoader = () => {
 
             {/* Glitchy Text */}
             <div className="relative z-10">
-                <p className="font-mono text-xl tracking-[0.3em] font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-white animate-pulse">
-                    LOADING ASSETS
-                </p>
                 <p className="text-center text-xs text-gray-500 mt-2 font-mono">
+                    <br /><br />
                     ESTABLISHING SECURE CONNECTION...
                 </p>
             </div>
