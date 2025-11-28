@@ -276,7 +276,7 @@ function App() {
                     {/* DEFAULT STATE: Title Badge (Always visible if not active) */}
                     <div className={`absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-4 transition-opacity duration-300 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
                       <h4 className="text-lg font-bold text-white uppercase tracking-wider drop-shadow-md">
-                        {item.heading} <span className="text-blue-500 text-xs align-top animate-pulse">●</span>
+                        {item.heading}
                       </h4>
                     </div>
 
@@ -313,7 +313,7 @@ function App() {
                       </div>
 
                       {/* Close Hint */}
-                      <span className="absolute bottom-3 text-[10px] text-gray-500 uppercase tracking-widest">
+                      <span className="absolute bottom-1 text-[10px] text-gray-500 uppercase tracking-widest">
                         Click to Close
                       </span>
                     </div>
