@@ -33,7 +33,7 @@ const data = [
   {
     heading: "GitHUB ReadMe Generator",
     note: "Analyse a github user repository and generate a ReadME in markdown.",
-    img: "/images/githubanalyser.png",
+    img: "/images/readmesmith.png",
     demoLink: "https://github-profile-analyzer-frontend.vercel.app/",
     githubLink: "https://github.com/AlvinGeorge-AG/ReadmeSmith",
     type: "FastAPI Projects"
