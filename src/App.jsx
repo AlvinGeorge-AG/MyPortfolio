@@ -45,22 +45,6 @@ const data = [
     demoLink: "https://alvingeorge-ag.github.io/QRcode-js-project/",
     githubLink: "https://github.com/AlvinGeorge-AG/QRcode-js-project.git",
     type: "JavaScript Projects"
-  },
-  {
-    heading: "JavaScript Clock",
-    note: "A simple Clock created with HTML and JS.",
-    img: "/images/clockjs.png",
-    demoLink: "https://alvingeorge-ag.github.io/CLOCK_js_project/",
-    githubLink: "https://github.com/AlvinGeorge-AG/CLOCK_js_project.git",
-    type: "JavaScript Projects"
-  },
-  {
-    heading: "Quote Generator",
-    note: "Random Quote Generator using API.",
-    img: "/images/randquote.png",
-    demoLink: "https://alvingeorge-ag.github.io/Random-Quote-Generator/",
-    githubLink: "https://github.com/AlvinGeorge-AG/Random-Quote-Generator.git",
-    type: "HTML&CSSProjects"
   }
 ];
 
