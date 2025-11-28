@@ -7,6 +7,38 @@ import "./App.css";
 
 const data = [
   {
+    heading: "Digital Patient Card",
+    note: "A hospital Management System for Seamless communication between Doctors and Patients.",
+    img: "/images/dpc.png",
+    demoLink: "https://dpcfrontend.vercel.app/",
+    githubLink: "https://github.com/AlvinGeorge-AG/DigitalPatientCardBackend",
+    type: "Java Projects"
+  },
+  {
+    heading: "GadNEXUS",
+    note: "A full-stack gadget blog platform built with Flask, MongoDB, and Jinja.",
+    img: "/images/gadnexus.png",
+    demoLink: "https://gad-nexus.vercel.app/",
+    githubLink: "https://github.com/AlvinGeorge-AG/GadNEXUS",
+    type: "Python Projects"
+  },
+  {
+    heading: "GitHUB Profile Analyser",
+    note: "Analyse a github user profile and give suggestions.",
+    img: "/images/githubanalyser.png",
+    demoLink: "https://github-profile-analyzer-frontend.vercel.app/",
+    githubLink: "https://github.com/AlvinGeorge-AG/GitHub-Profile-Analyzer",
+    type: "FastAPI Projects"
+  },
+  {
+    heading: "GitHUB ReadMe Generator",
+    note: "Analyse a github user repository and generate a ReadME in markdown.",
+    img: "/images/githubanalyser.png",
+    demoLink: "https://github-profile-analyzer-frontend.vercel.app/",
+    githubLink: "https://github.com/AlvinGeorge-AG/ReadmeSmith",
+    type: "FastAPI Projects"
+  },
+  {
     heading: "QR CODE Generator",
     note: "Built by integrating API & JavaScript.",
     img: "/images/qrcodejs.png",
@@ -21,38 +53,6 @@ const data = [
     demoLink: "https://alvingeorge-ag.github.io/CLOCK_js_project/",
     githubLink: "https://github.com/AlvinGeorge-AG/CLOCK_js_project.git",
     type: "JavaScript Projects"
-  },
-  {
-    heading: "Personal Website",
-    note: "Created with HTML | CSS | JavaScript.",
-    img: "/images/new.png",
-    demoLink: "https://AlvinGeorge-AG.github.io/MYWEB",
-    githubLink: "https://github.com/AlvinGeorge-AG/MYWEB/",
-    type: "HTML&CSSProjects"
-  },
-  {
-    heading: "Understanding Git",
-    note: "A simple webpage created with HTML/CSS.",
-    img: "/images/Screenshot 2024-08-25 201131.png",
-    demoLink: "https://AlvinGeorge-AG.github.io/Gitproject/",
-    githubLink: "https://github.com/AlvinGeorge-AG/Gitproject.git",
-    type: "GitProjects"
-  },
-  {
-    heading: "Image Slider",
-    note: "ImageSlide created with HTML and JS.",
-    img: "/images/imagesliderjs.png",
-    demoLink: "https://alvingeorge-ag.github.io/imageSlider_JavascriptProject/",
-    githubLink: "https://github.com/AlvinGeorge-AG/imageSlider_JavascriptProject.git",
-    type: "HTML&CSSProjects"
-  },
-  {
-    heading: "Calculator",
-    note: "Simple Calculator made with JavaScript.",
-    img: "/images/calu.png",
-    demoLink: "https://AlvinGeorge-AG.github.io/CALCULATOR/",
-    githubLink: "https://github.com/AlvinGeorge-AG/CALCULATOR.git",
-    type: "GitProjects"
   },
   {
     heading: "Quote Generator",

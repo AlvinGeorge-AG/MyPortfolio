@@ -6,7 +6,7 @@ const Typewriter = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [typingSpeed, setTypingSpeed] = useState(150);
 
-    const words = ["Hello World!","sudo whoami", "I'm Alvin George", "Full Stack Developer"];
+    const words = ["Hello World!", "sudo whoami", "I'm Alvin George", "Full Stack Developer"];
 
     useEffect(() => {
         const handleType = () => {
