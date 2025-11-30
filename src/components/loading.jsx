@@ -1,6 +1,22 @@
 import React from 'react';
+import { useEffect } from 'react';
 
 const GeometricLoader = () => {
+
+    useEffect(() => {
+        // 1. Prevent scrolling
+        document.body.style.overflow = 'hidden';
+
+        // 2. Force scroll to top (so you don't start in the middle)
+        window.scrollTo(0, 0);
+
+        // 3. Cleanup: Re-enable scrolling when component unmounts
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, []);
+
+
     return (
         <div className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black text-white">
             <style>
