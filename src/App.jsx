@@ -51,7 +51,7 @@ const data = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languages, setlanguages] = useState([]);
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
   const [emailoading, setemailoading] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
   const [name, setName] = useState("");
@@ -60,7 +60,6 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    setloading(true);
     const fetchData = async () => {
       try {
         const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
@@ -83,7 +82,7 @@ function App() {
     setemailoading(true);
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/sendmail", {
+      const response = await axios.post("https://alvin-portfoliobackend.vercel.app/sendmail", {
         name: name,
         email: email,
         subject: subject,
