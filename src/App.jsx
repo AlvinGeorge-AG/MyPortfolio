@@ -51,10 +51,16 @@ const data = [
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languages, setlanguages] = useState([]);
-  const [loading, setloading] = useState(true);
+  const [loading, setloading] = useState(false);
+  const [emailoading, setemailoading] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
+    setloading(true);
     const fetchData = async () => {
       try {
         const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
@@ -69,6 +75,36 @@ function App() {
     };
     fetchData();
   }, []);
+
+  const sentmail = async (e) => {
+
+    e.preventDefault();
+
+    setemailoading(true);
+
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/sendmail", {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+      });
+
+      if (response.status === 200) {
+        alert("Email Successfully Sent!");
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
+      }
+    } catch (error) {
+      console.log("ERROR sending mail:", error);
+      alert("Failed to send email. Please try again.");
+    } finally {
+
+      setemailoading(false);
+    }
+  }
 
   return (
 
@@ -359,19 +395,54 @@ function App() {
 
           <div className="bg-zinc-800 p-10 shadow-2xl rounded-2xl border border-zinc-700">
             {/* CHANGED: Increased space-y from 6 to 8 */}
-            <form className="space-y-8">
-              {/* CHANGED: Increased gap from 6 to 8 */}
+            <form onSubmit={sentmail} className="space-y-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <input type="text" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Your Name" />
-                <input type="email" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Your Email" />
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors"
+                  placeholder="Your Name"
+                  required
+                />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors"
+                  placeholder="Your Email"
+                  required
+                />
               </div>
-              <input type="text" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Subject" />
+
+              <input
+                type="text"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
+                className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors"
+                placeholder="Subject"
+                required
+              />
               <p></p>
-              <textarea rows="5" className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors" placeholder="Message"></textarea>
-              <button className="w-full bg-blue-600 text-black py-4 font-bold uppercase rounded hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/50">
-                Send Message
+              <textarea
+                rows="5"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="w-full p-4 bg-zinc-900 border border-zinc-600 rounded focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 text-white placeholder-gray-500 transition-colors"
+                placeholder="Message"
+                required
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-black py-4 font-bold uppercase rounded hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-500/50"
+
+              >
+
+                {emailoading ? "Sending… one sec" : "Send Message"}
               </button>
             </form>
+
           </div>
 
           <div className="text-center mt-16 text-gray-500 text-sm">
