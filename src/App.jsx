@@ -152,7 +152,7 @@ function App() {
             <div className="w-full md:w-7/12">
               <h4 className="text-2xl font-bold mb-4 text-blue-400">Code Crusader</h4>
               <p className="text-gray-300 leading-relaxed text-lg">
-                Hi, I'm <span className="font-bold text-white">Alvin George</span>. With a strong foundation in programming fundamentals, I'm eager to dive deeper into technology. I've gained a solid grasp of Python, HTML, and CSS, and I'm excited to expand my skill set further.
+                Hi, I'm <span className="font-bold text-white">Alvin George</span>. With a strong foundation in programming fundamentals, I'm eager to dive deeper into technology. I've gained a solid grasp of Python, Java, and C, and I'm excited to expand my skill set further.
               </p>
             </div>
           </div>
