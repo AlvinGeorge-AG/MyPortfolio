@@ -5,52 +5,10 @@ import Typewriter from './components/typewriter'
 import "./App.css";
 
 
-const data = [
-  {
-    heading: "Digital Patient Card",
-    note: "A hospital Management System for Seamless communication between Doctors and Patients.",
-    img: "/images/dpc.png",
-    demoLink: "https://dpcfrontend.vercel.app/",
-    githubLink: "https://github.com/AlvinGeorge-AG/DigitalPatientCardBackend",
-    type: "Java Projects"
-  },
-  {
-    heading: "GadNEXUS",
-    note: "A full-stack gadget blog platform built with Flask, MongoDB, and Jinja.",
-    img: "/images/gadnexus.png",
-    demoLink: "https://gad-nexus.vercel.app/",
-    githubLink: "https://github.com/AlvinGeorge-AG/GadNEXUS",
-    type: "Python Projects"
-  },
-  {
-    heading: "GitHUB Profile Analyser",
-    note: "Analyse a github user profile and give suggestions.",
-    img: "/images/githubanalyser.png",
-    demoLink: "https://github-profile-analyzer-frontend.vercel.app/",
-    githubLink: "https://github.com/AlvinGeorge-AG/GitHub-Profile-Analyzer",
-    type: "FastAPI Projects"
-  },
-  {
-    heading: "GitHUB ReadMe Generator",
-    note: "Analyse a github user repository and generate a ReadME in markdown.",
-    img: "/images/readmesmith.png",
-    demoLink: "https://github-profile-analyzer-frontend.vercel.app/",
-    githubLink: "https://github.com/AlvinGeorge-AG/ReadmeSmith",
-    type: "FastAPI Projects"
-  },
-  {
-    heading: "QR CODE Generator",
-    note: "Built by integrating API & JavaScript.",
-    img: "/images/qrcodejs.png",
-    demoLink: "https://alvingeorge-ag.github.io/QRcode-js-project/",
-    githubLink: "https://github.com/AlvinGeorge-AG/QRcode-js-project.git",
-    type: "JavaScript Projects"
-  }
-];
-
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [languages, setlanguages] = useState([]);
+  const [projects, setprojects] = useState([]);
   const [loading, setloading] = useState(true);
   const [emailoading, setemailoading] = useState(false);
   const [activeProject, setActiveProject] = useState(null);
@@ -62,25 +20,30 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+
         const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
-        setlanguages(response.data);
+        setlanguages(await response.data);
+
+        const fetchprojects = await axios.get("https://alvin-portfoliobackend.vercel.app/projects");
+        setprojects(await fetchprojects.data);
+
+
         setTimeout(() => {
           setloading(false);
-        }, 3000);
+        }, 1000);
+
       } catch (error) {
         console.error(error);
         setloading(false);
       }
     };
     fetchData();
+
   }, []);
 
   const sentmail = async (e) => {
-
     e.preventDefault();
-
     setemailoading(true);
-
     try {
       const response = await axios.post("https://alvin-portfoliobackend.vercel.app/sendmail", {
         name: name,
@@ -100,7 +63,6 @@ function App() {
       console.log("ERROR sending mail:", error);
       alert("Failed to send email. Please try again.");
     } finally {
-
       setemailoading(false);
     }
   }
@@ -272,7 +234,7 @@ function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {data.map((item, index) => {
+              {projects.map((item, index) => {
                 const isActive = activeProject === index;
 
                 return (
