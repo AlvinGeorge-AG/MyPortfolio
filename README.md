@@ -1,16 +1,79 @@
-# React + Vite
+# MyPortfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This repository contains my personal portfolio website built using React. It showcases projects, skills, and personal information. The project utilizes Tailwind CSS for styling and Vite for build tooling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+*   **Responsive Design:** Adapts to various screen sizes for optimal viewing.
+*   **Project Showcase:** Displays various projects with associated details.
+*   **Skills Display:** Highlights technical skills and proficiencies.
+*   **Contact Information:** Provides means for potential employers or collaborators to get in touch.
+*   **Interactive Elements:** Includes components like a typewriter effect for dynamic text display.
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+*   **Frontend:** React.js, JavaScript, HTML, CSS
+*   **Styling:** Tailwind CSS
+*   **Build Tool:** Vite
+*   **Other:** ESLint for code linting
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/AlvinGeorge-AG/MyPortfolio.git
+    cd MyPortfolio
+    ```
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+    or
+    ```bash
+    yarn install
+    ```
+
+## Usage
+
+To view the portfolio, run the development server.
+
+
+## Running Locally
+
+To start the development server and view the portfolio locally:
+
+```bash
+npm run dev
+```
+or
+```bash
+yarn dev
+```
+
+This will typically start a local development server, and you can access the portfolio in your browser at a given address (usually `http://localhost:xxxx`).
+
+## Build/Deploy
+
+The `package.json` file contains build scripts that can be used for deployment.
+
+To create a production build:
+
+```bash
+npm run build
+```
+or
+```bash
+yarn build
+```
+
+This command will generate optimized static assets in a `dist` folder, which can then be deployed to any static hosting provider. Based on the repository's homepage (`https://alvingeorge-myportfolio.vercel.app/`), Vercel is a likely deployment platform.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request or open an issue.
+
+## License
+
+This project is not explicitly licensed.
