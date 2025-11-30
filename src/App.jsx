@@ -121,9 +121,9 @@ function App() {
           </nav>
 
           <div className="p-6 border-t border-zinc-800 flex justify-center gap-5">
-            <i className="fa fa-github text-xl text-gray-500 hover:text-white cursor-pointer transition-colors hover:scale-110"></i>
-            <i className="fa fa-linkedin text-xl text-gray-500 hover:text-blue-400 cursor-pointer transition-colors hover:scale-110"></i>
-            <i className="fa fa-instagram text-xl text-gray-500 hover:text-pink-500 cursor-pointer transition-colors hover:scale-110"></i>
+            <a href="https://github.com/AlvinGeorge-AG"><i className="fa fa-github text-xl text-gray-500 hover:text-white cursor-pointer transition-colors hover:scale-110"></i></a>
+            <a href="https://www.linkedin.com/in/alvingeorge550"><i className="fa fa-linkedin text-xl text-gray-500 hover:text-blue-400 cursor-pointer transition-colors hover:scale-110"></i></a>
+            <a href="mailto:alvingeorge_@outlook.com" ><i className="fa fa-envelope text-xl text-gray-500 hover:text-pink-500 cursor-pointer transition-colors hover:scale-110"></i></a>
           </div>
         </div>
       </aside>
