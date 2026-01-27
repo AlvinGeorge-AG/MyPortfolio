@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import GeometricLoader from './components/loading';
-import Typewriter from './components/typewriter'
+import Typewriter from './components/typewriter';
+import Experience from "./components/Experience";
 import "./App.css";
 
 
@@ -69,67 +70,69 @@ function App() {
 
   return (
 
-    <div className="bg-zinc-900 min-h-screen font-sans text-gray-200">
+    <div className="bg-zinc-900 min-h-screen font-sans text-gray-200 animated-bg">
+      <div className="animated-bg-layer" />
 
-      {loading && <GeometricLoader />}
+      <div className="animated-bg-content">
+        {loading && <GeometricLoader />}
 
-      {/* --- MOBILE NAV BAR --- */}
-      <div className="fixed top-0 left-0 w-full bg-zinc-900 text-black shadow-md z-40 p-4 md:hidden flex justify-between items-center border-b border-zinc-700">
-        <span onClick={() => setMenuOpen(true)} className="font-bold text-lg text-white tracking-wider">ALVIN GEORGE</span>
-        <button onClick={() => setMenuOpen(true)} className="p-2 text-red">
-          <i className="fa fa-bars text-2xl"></i>
-        </button>
-      </div>
-
-      {/* --- SIDEBAR --- */}
-      <aside
-        className={`fixed top-0 left-0 z-50 h-full w-72 bg-black text-white shadow-2xl transform transition-transform duration-300 ease-in-out border-r border-zinc-800
-          ${menuOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`
-        }
-      >
-        <div className="flex flex-col h-full overflow-y-auto">
-          {/* Close Button (Mobile) */}
-          <button onClick={() => setMenuOpen(false)} className="md:hidden absolute top-4 right-4 text-gray-400 hover:text-white">
-            <i className="fa fa-times text-xl"></i>
+        {/* --- MOBILE NAV BAR --- */}
+        <div className="fixed top-0 left-0 w-full bg-zinc-900 text-black shadow-md z-40 p-4 md:hidden flex justify-between items-center border-b border-zinc-700">
+          <span onClick={() => setMenuOpen(true)} className="font-bold text-lg text-white tracking-wider">ALVIN GEORGE</span>
+          <button onClick={() => setMenuOpen(true)} className="p-2 text-red">
+            <i className="fa fa-bars text-2xl"></i>
           </button>
-
-          <div className="flex flex-col items-center pt-12 pb-8 px-6 text-center border-b border-zinc-800">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-700 mb-4 shadow-xl transition-transform hover:scale-105 duration-300">
-              <img src="/images/my.jpg" alt="Profile" className="w-full h-full object-cover" />
-            </div>
-            <h4 className="text-xl font-bold tracking-wider text-white">ALVIN GEORGE</h4>
-            <span className="text-xs text-gray-400 mt-2 uppercase tracking-widest">Tech Enthusiast</span>
-          </div>
-
-          <nav className="flex-1 py-8">
-            <ul className="flex flex-col space-y-2">
-              {["About Me", "Tech Skills", "My Projects", "Resume", "Contact Me"].map((text, idx) => {
-                const ids = ["#1", "#3", "#2", "#4", "#5"];
-                return (
-                  <li key={idx}>
-                    <a
-                      href={ids[idx]}
-                      onClick={() => setMenuOpen(false)}
-                      className="block py-3 px-8 text-sm font-medium text-gray-400 hover:bg-zinc-800 hover:text-white border-l-4 border-transparent hover:border-blue-500 transition-all"
-                    >
-                      {text}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-
-          <div className="p-6 border-t border-zinc-800 flex justify-center gap-5">
-            <a href="https://github.com/AlvinGeorge-AG"><i className="fa fa-github text-xl text-gray-500 hover:text-white cursor-pointer transition-colors hover:scale-110"></i></a>
-            <a href="https://www.linkedin.com/in/alvingeorge550"><i className="fa fa-linkedin text-xl text-gray-500 hover:text-blue-400 cursor-pointer transition-colors hover:scale-110"></i></a>
-            <a href="mailto:alvingeorge_@outlook.com" ><i className="fa fa-envelope text-xl text-gray-500 hover:text-pink-500 cursor-pointer transition-colors hover:scale-110"></i></a>
-          </div>
         </div>
-      </aside>
 
-      {/* --- MAIN CONTENT --- */}
-      <main className="md:ml-72 transition-all duration-300">
+        {/* --- SIDEBAR --- */}
+        <aside
+          className={`fixed top-0 left-0 z-50 h-full w-72 bg-black text-white shadow-2xl transform transition-transform duration-300 ease-in-out border-r border-zinc-800
+            ${menuOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`
+          }
+        >
+          <div className="flex flex-col h-full overflow-y-auto">
+            {/* Close Button (Mobile) */}
+            <button onClick={() => setMenuOpen(false)} className="md:hidden absolute top-4 right-4 text-gray-400 hover:text-white">
+              <i className="fa fa-times text-xl"></i>
+            </button>
+
+            <div className="flex flex-col items-center pt-12 pb-8 px-6 text-center border-b border-zinc-800">
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-zinc-700 mb-4 shadow-xl transition-transform hover:scale-105 duration-300">
+                <img src="/images/my.jpg" alt="Profile" className="w-full h-full object-cover" />
+              </div>
+              <h4 className="text-xl font-bold tracking-wider text-white">ALVIN GEORGE</h4>
+              <span className="text-xs text-gray-400 mt-2 uppercase tracking-widest">Tech Enthusiast</span>
+            </div>
+
+            <nav className="flex-1 py-8">
+              <ul className="flex flex-col space-y-2">
+                {["About Me", "Tech Skills", "My Projects", "Experience", "Resume", "Contact Me"].map((text, idx) => {
+                  const ids = ["#1", "#3", "#2", "#6", "#4", "#5"];
+                  return (
+                    <li key={idx}>
+                      <a
+                        href={ids[idx]}
+                        onClick={() => setMenuOpen(false)}
+                        className="block py-3 px-8 text-sm font-medium text-gray-400 hover:bg-zinc-800 hover:text-white border-l-4 border-transparent hover:border-blue-500 transition-all"
+                      >
+                        {text}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+
+            <div className="p-6 border-t border-zinc-800 flex justify-center gap-5">
+              <a href="https://github.com/AlvinGeorge-AG"><i className="fa fa-github text-xl text-gray-500 hover:text-white cursor-pointer transition-colors hover:scale-110"></i></a>
+              <a href="https://www.linkedin.com/in/alvingeorge550"><i className="fa fa-linkedin text-xl text-gray-500 hover:text-blue-400 cursor-pointer transition-colors hover:scale-110"></i></a>
+              <a href="mailto:alvingeorge_@outlook.com" ><i className="fa fa-envelope text-xl text-gray-500 hover:text-pink-500 cursor-pointer transition-colors hover:scale-110"></i></a>
+            </div>
+          </div>
+        </aside>
+
+        {/* --- MAIN CONTENT --- */}
+        <main className="md:ml-72 transition-all duration-300">
 
         {/* SECTION 1: ABOUT ME (With Typewriter) */}
         <section id="1" className="py-24 px-6 md:px-12 max-w-6xl mx-auto border-b border-zinc-700">
@@ -192,6 +195,8 @@ function App() {
             </div>
           </div>
         </section>
+
+        <Experience />
 
         {/* SECTION 3: TECH SKILLS */}
         <section id="3" className="py-24 px-6 md:px-12 max-w-6xl mx-auto">
@@ -411,7 +416,8 @@ function App() {
           </div>
         </section>
 
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
