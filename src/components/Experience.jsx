@@ -2,6 +2,36 @@ import React from "react";
 
 const experiences = [
   {
+    title: "Machine Learning Intern",
+    organization: "FlyRank AI",
+    type: "Internship",
+    start: "Jul 2026",
+    end: "Present",
+    location: "Remote",
+    summary:
+      "Currently working at FlyRank AI as an ML Intern, applying machine learning techniques to real-world AI products.",
+    highlights: [
+      "Working on ML model development and integration.",
+      "Collaborating with cross-functional teams on AI-powered solutions.",
+    ],
+    iconSrc: "/images/flyrankai.png",
+  },
+  {
+    title: "Initiatives Head",
+    organization: "MACS MEC",
+    type: "Part-time",
+    start: "Apr 2026",
+    end: "Present",
+    location: "Model Engineering College",
+    summary:
+      "Leading initiatives at MACS (MEC Association of Computer Students). Previously served as Executive Member from Jul 2025 – Apr 2026.",
+    highlights: [
+      "Organizing tech events, workshops, and hackathons for the CS community.",
+      "Linux System Administration and mentoring junior members.",
+    ],
+    iconSrc: "/images/macs.png",
+  },
+  {
     title: "Backend Developer Intern",
     organization: "MarkX",
     type: "Internship",
@@ -13,6 +43,7 @@ const experiences = [
     highlights: [
       "Built An Automated System that Scrapes data from Instagram using APIFY.",
       "Used Langchain to Connect With AI Model.",
+      "FastAPI backend development with AI & LLM integration (LangChain, Groq/Llama 3).",
     ],
     iconSrc: "/images/markx.jpeg",
   },
