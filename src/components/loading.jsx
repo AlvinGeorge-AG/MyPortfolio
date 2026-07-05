@@ -44,16 +44,16 @@ const GeometricLoader = () => {
             <div className="relative flex items-center justify-center mb-10">
 
                 {/* Outer Ring - Dashed */}
-                <div className="absolute w-40 h-40 border border-dashed border-gray-600 rounded-full animate-[spin_10s_linear_infinite]"></div>
+                <div className="absolute w-40 h-40 border border-dashed border-gray-600 rounded-full animate-[spin_4s_linear_infinite]"></div>
 
                 {/* Middle Ring - Blue Glow */}
-                <div className="absolute w-32 h-32 border-t-2 border-b-2 border-blue-500 rounded-full animate-[spin-reverse_3s_linear_infinite] shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+                <div className="absolute w-32 h-32 border-t-2 border-b-2 border-blue-500 rounded-full animate-[spin-reverse_1.5s_linear_infinite] shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
 
                 {/* Inner Ring - White */}
-                <div className="absolute w-24 h-24 border-r-4 border-l-1 border-white/80 rounded-full animate-[spin_1.5s_ease-in-out_infinite]"></div>
+                <div className="absolute w-24 h-24 border-r-4 border-l-1 border-white/80 rounded-full animate-[spin_0.8s_ease-in-out_infinite]"></div>
 
                 {/* Core Morphing Shape */}
-                <div className="w-8 h-8 bg-white" style={{ animation: 'morph 2s ease-in-out infinite' }}></div>
+                <div className="w-8 h-8 bg-white" style={{ animation: 'morph 1s ease-in-out infinite' }}></div>
             </div>
 
             {/* Glitchy Text */}

@@ -21,17 +21,17 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        const [langResponse, projResponse] = await Promise.all([
+          axios.get("https://alvin-portfoliobackend.vercel.app/languages"),
+          axios.get("https://alvin-portfoliobackend.vercel.app/projects")
+        ]);
 
-        const response = await axios.get("https://alvin-portfoliobackend.vercel.app/languages");
-        setlanguages(await response.data);
-
-        const fetchprojects = await axios.get("https://alvin-portfoliobackend.vercel.app/projects");
-        setprojects(await fetchprojects.data);
-
+        setlanguages(langResponse.data);
+        setprojects(projResponse.data);
 
         setTimeout(() => {
           setloading(false);
-        }, 1000);
+        }, 300);
 
       } catch (error) {
         console.error(error);
