@@ -260,23 +260,21 @@ function App() {
               <div className="h-1 w-16 bg-blue-500 mx-auto mt-4 mb-4"></div>
             </div>
 
-            {/* GRID: grid-cols-2 for mobile, lg:grid-cols-4 for desktop */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            {/* Smaller, more compact skill tiles */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
               {languages.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-zinc-800 p-4 md:p-6 rounded-xl shadow-lg hover:bg-zinc-700 hover:-translate-y-2 transition-all duration-300 border border-zinc-700 flex flex-col items-center text-center group"
+                  className="aspect-square bg-zinc-800/90 p-3 sm:p-4 rounded-lg shadow-sm hover:bg-zinc-700 hover:-translate-y-1 transition-all duration-300 border border-zinc-700 flex flex-col items-center justify-center text-center group"
                 >
-                  {/* Image Size: Smaller on mobile (12) */}
-                  <div className="w-12 h-12 md:w-16 md:h-16 mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                     <img
                       src={`/images/${item.image.toLowerCase().replace(/[^a-z0-9]/g, "")}.png`}
                       alt={item.name}
                       className="w-full h-full object-contain"
                     />
                   </div>
-                  {/* Font Size: Smaller on mobile */}
-                  <h4 className="text-sm md:text-lg font-bold text-white">{item.name}</h4>
+                  <h4 className="text-[11px] sm:text-sm font-semibold leading-tight text-white">{item.name}</h4>
                 </div>
               ))}
             </div>
